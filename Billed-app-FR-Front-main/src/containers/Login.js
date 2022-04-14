@@ -25,8 +25,8 @@ export default class Login {
     }
     this.localStorage.setItem("user", JSON.stringify(user))
     this.login(user)
-      .catch(
-        (err) => this.createUser(user)
+    .catch(
+      (err) => this.createUser(user)
       )
       .then(() => {
         this.onNavigate(ROUTES_PATH['Bills'])
@@ -34,15 +34,17 @@ export default class Login {
         PREVIOUS_LOCATION = this.PREVIOUS_LOCATION
         this.document.body.style.backgroundColor="#fff"
       })
-
-  }
-
-  handleSubmitAdmin = e => {
-    e.preventDefault()
+      
+    }
+    
+    handleSubmitAdmin = e => {
+      e.preventDefault()
     const user = {
       type: "Admin",
-      email: e.target.querySelector(`input[data-testid="employee-email-input"]`).value,
-      password: e.target.querySelector(`input[data-testid="employee-password-input"]`).value,
+      // `input[data-testid="employee-password-input"]` to   `input[data-testid="admin-email-input"]`
+      email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value, 
+      // `input[data-testid="employee-password-input"]` to  `input[data-testid="admin-password-input"]`
+      password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value,
       status: "connected"
     }
     this.localStorage.setItem("user", JSON.stringify(user))
