@@ -21,7 +21,7 @@ export default class NewBill {
     const filePath = e.target.value.split(/\\/g);
     const fileName = filePath[filePath.length - 1];
 
-    if (fileName.match("jpg") || fileName.match("jpeg") || fileName.match("png")) {
+    if (fileName.includes("jpg") || fileName.includes("jpeg") || fileName.includes("png")) {
       const formData = new FormData();
       const email = JSON.parse(localStorage.getItem("user")).email;
       formData.append("file", file);
