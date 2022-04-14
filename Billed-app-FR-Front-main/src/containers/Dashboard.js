@@ -146,6 +146,7 @@ export default class {
     }
 
     bills.forEach(bill => {
+      // console.log($(`#open-bill${bill.id}`));
       $(`#open-bill${bill.id}`).off().click((e) => this.handleEditTicket(e, bill, bills))
     })
 
