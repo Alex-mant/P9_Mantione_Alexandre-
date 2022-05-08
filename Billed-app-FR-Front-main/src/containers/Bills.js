@@ -33,11 +33,13 @@ export default class {
       .bills()
       .list()
       .then(snapshot => {
-        const bills = snapshot        
-          // sort by dates (earliest to lastest)
+        const bills = snapshot
+          //sorting of dates before HTML insertion from most recent to oldest
           .sort((a, b) => ((a.date < b.date) ? 1 : -1))
           .map(doc => {
+            debugger
             try {
+              //console.log(formatDate(doc.status));
               return {
                 ...doc,
                 date: formatDate(doc.date),
