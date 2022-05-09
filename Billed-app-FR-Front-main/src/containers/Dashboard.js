@@ -34,7 +34,6 @@ export const card = (bill) => {
   const lastName = firstAndLastNames.includes('.') ?
   firstAndLastNames.split('.')[1] : firstAndLastNames
 
-
   return (`
     <div class='bill-card' id='open-bill${bill.id}' data-testid='open-bill${bill.id}'>
       <div class='bill-card-name-container'>
@@ -147,10 +146,6 @@ export default class {
     }
 
     bills.forEach(bill => {
-      
-      //Remove all event
-      $(`#open-bill${bill.id}`).off() 
-
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
 
