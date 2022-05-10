@@ -37,7 +37,6 @@ export default class {
           //sorting of dates before HTML insertion from most recent to oldest
           .sort((a, b) => ((a.date < b.date) ? 1 : -1))
           .map(doc => {
-            debugger
             try {
               //console.log(formatDate(doc.status));
               return {
