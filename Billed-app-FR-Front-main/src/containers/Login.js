@@ -42,9 +42,9 @@ export default class Login {
     const user = {
       type: "Admin",
       // `input[data-testid="employee-password-input"]` to   `input[data-testid="admin-email-input"]`
-      email: e.target.querySelector(`input[data-testid="admin-email-input"]`).value, 
+      email: e.target.querySelector(`input[data-testid="employee-email-input"]`).value, 
       // `input[data-testid="employee-password-input"]` to  `input[data-testid="admin-password-input"]`
-      password: e.target.querySelector(`input[data-testid="admin-password-input"]`).value,
+      password: e.target.querySelector(`input[data-testid="employee&-password-input"]`).value,
       status: "connected"
     }
     this.localStorage.setItem("user", JSON.stringify(user))
